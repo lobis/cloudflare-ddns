@@ -26,19 +26,13 @@ bash ./cloudflare-update-dns-record.sh $CF_API_TOKEN $CF_ZONE_ID $DNS_RECORD_NAM
 
 It is recommended to make the script executable and add it to your crontab to run it periodically.
 
-To make the script executable:
-
-```bash
-chmod +x ./cloudflare-update-dns-record.sh
-```
-
-To add the script to your crontab:
-
 First place the script in an appropriate location, for example `/usr/local/bin/cloudflare-update-dns-record.sh`.
 
 ```bash
 # Download the script to /usr/local/bin
 curl -o /usr/local/bin/cloudflare-update-dns-record.sh https://raw.githubusercontent.com/lobis/cloudflare-ddns/main/cloudflare-update-dns-record.sh
+# Make the script executable
+chmod +x /usr/local/bin/cloudflare-update-dns-record.sh
 ```
 
 Then open your crontab:
