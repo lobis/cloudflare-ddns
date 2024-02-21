@@ -38,7 +38,7 @@ First place the script in an appropriate location, for example `/usr/local/bin/c
 
 ```bash
 # Download the script to /usr/local/bin
-sudo curl -o /usr/local/bin/cloudflare-update-dns-record.sh https://raw.githubusercontent.com/lobis/cloudflare-ddns/main/cloudflare-update-dns-record.sh
+curl -o /usr/local/bin/cloudflare-update-dns-record.sh https://raw.githubusercontent.com/lobis/cloudflare-ddns/main/cloudflare-update-dns-record.sh
 ```
 
 Then open your crontab:
