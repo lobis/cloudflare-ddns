@@ -1,8 +1,16 @@
 #!/bin/bash
 
-CF_API_TOKEN=your-cloudflare-api-token
-CF_ZONE_ID=your-cloudflare-zone-id # You can find it in the Cloudflare dashboard
-DNS_RECORD_NAME=your-dns-record-name.domain.com # The DNS A record you want to update (fully qualified domain name)
+if [ $# -ne 3 ]; then
+    echo "Usage: $0 <CF_API_TOKEN> <CF_ZONE_ID> <DNS_RECORD_NAME>"
+    echo "CF_API_TOKEN: Cloudflare API token"
+    echo "CF_ZONE_ID: Cloudflare zone ID (can be found in the Cloudflare dashboard)"
+    echo "DNS_RECORD_NAME: The DNS record name to update (e.g. record.mydomain.com)"
+    exit 1
+fi
+
+CF_API_TOKEN=$1
+CF_ZONE_ID=$2
+DNS_RECORD_NAME=$3
 
 PUBLIC_IP=$(curl -s https://api.ipify.org)
 # Check if the IP is valid
